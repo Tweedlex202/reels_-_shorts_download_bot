@@ -1,0 +1,13 @@
+services:
+  insta-bot:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    tmpfs:
+      - /tmp
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
